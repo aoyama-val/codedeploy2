@@ -11,5 +11,4 @@ commit_id="$1"
 aws deploy create-deployment \
     --application-name aoyama-asg2 \
     --deployment-group-name aoyama-dg-asg2 \
-    --s3-location bucket=aoyama-private.vallab.ninja,key=codedeploy2.zip,bundleType=zip,eTag=$etag
-    --github-location "commitId=$commit_id,repository=aoyama-val/codedeploy2"`
+    --github-location "commitId=$commit_id,repository=aoyama-val/codedeploy2"
