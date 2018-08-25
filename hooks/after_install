@@ -1,0 +1,5 @@
+#!/bin/sh
+
+oldpwd=$(pwd)
+cd /usr/share/nginx/html
+echo "$(date): After Install executed. oldpwd=${oldpwd}" | tee deploy.log

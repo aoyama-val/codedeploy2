@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+if [ $# -lt 1 ]; then
+    exit 1
+fi
+
+etag="$1"
+
+aws deploy create-deployment --application-name aoyama1 --s3-location bucket=aoyama-private.vallab.ninja,key=codedeploy1.zip,bundleType=zip,eTag=$etag --deployment-group-name aoyama1-dg1

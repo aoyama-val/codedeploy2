@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+# プロジェクトのディレクトリをzipに固めてS3にアップロード
+aws deploy push --region ap-northeast-1 --application-name aoyama1 --s3-location s3://aoyama-private.vallab.ninja/codedeploy1.zip  --source .

@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /usr/share/nginx/html/
+permissions:
+  - object: /usr/share/nginx/html/
+    pattern: "**"
+    owner: root
+    group: root
+hooks:
+  AfterInstall:
+    - location: hooks/after_install
+      timeout: 15
+      runas: root
