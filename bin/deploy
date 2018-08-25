@@ -11,4 +11,17 @@ commit_id="$1"
 aws deploy create-deployment \
     --application-name aoyama-asg2 \
     --deployment-group-name aoyama-dg-asg2 \
-    --github-location "commitId=$commit_id,repository=aoyama-val/codedeploy2"
+    --github-location "commitId=$commit_id,repository=aoyama-val/codedeploy2" \
+    | tee create-deployment.json
+
+deployment_id=$(jq -r '.deploymentId' create-deployment.json)
+
+rm -f create-deployment.json
+
+status=$(aws deploy get-deployment --deployment-id "$deployment_id" | jq -r '.deploymentInfo.status')
+
+if [ "$status" = 'success' ]; then
+    echo '成功しました'
+else
+    echo "失敗しました: status = [$status]"
+fi
