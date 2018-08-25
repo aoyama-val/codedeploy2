@@ -12,3 +12,4 @@ cd /service/codedeploy2
 bin/bundle install --path ./vendor -j4 --without development test
 bin/rails assets:precompile
 bin/rails server --daemon
+sleep 8
