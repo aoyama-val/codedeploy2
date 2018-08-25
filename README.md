@@ -1,5 +1,7 @@
 # デプロイ
 
+GitHubにpushしてから
+
 ```
-./bin/deploy <commit_id>
+./bin/deploy
 ```
