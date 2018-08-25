@@ -16,6 +16,8 @@ deployment_id=$(jq -r '.deploymentId' create-deployment.json)
 
 rm -f create-deployment.json
 
+echo 'デプロイ中...'
+
 # デプロイ完了を待つ
 aws deploy wait deployment-successful --deployment-id "$deployment_id"
 
