@@ -18,6 +18,8 @@ deployment_id=$(jq -r '.deploymentId' create-deployment.json)
 
 rm -f create-deployment.json
 
+aws deploy wait deployment-successful --deployment-id "$deployment_id"
+
 status=$(aws deploy get-deployment --deployment-id "$deployment_id" | jq -r '.deploymentInfo.status')
 
 if [ "$status" = 'success' ]; then
