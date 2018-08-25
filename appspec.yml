@@ -9,7 +9,7 @@ permissions:
     group: ec2-user
 hooks:
   ApplicationStop:
-    - location: /deploy/aws_samples/deregister_from_elb.sh
+      #- location: /deploy/aws_samples/deregister_from_elb.sh
     - location: /deploy/start_maintenance.sh
   BeforeInstall:
     - location: /deploy/remove_app.sh
@@ -18,4 +18,4 @@ hooks:
       runas: ec2-user
   ApplicationStart:
     - location: /deploy/finish_maintenance.sh
-    - location: /deploy/aws_samples/register_with_elb.sh
+      #- location: /deploy/aws_samples/register_with_elb.sh
