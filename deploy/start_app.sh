@@ -11,4 +11,4 @@ export SECRET_KEY_BASE='1lkjljljklwrjglwejgjsdfn4ntk2n34jn4dnf34'
 cd /service/codedeploy2
 bin/bundle install --path ./vendor -j4 --without development test
 bin/rails assets:precompile
-bin/rails server
+bin/rails server --daemon
