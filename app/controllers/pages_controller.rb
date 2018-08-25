@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def root
-    render plain: "こんにちは! #{Time.now.iso8601} hostname = #{`hostname`}"
+    render plain: "app1 こんにちは! #{Time.now.iso8601} hostname = #{`hostname`}"
   end
 end
