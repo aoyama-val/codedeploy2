@@ -2,6 +2,8 @@
 
 set -e
 
+echo "START: $(date)"
+
 # ローカルの現在のHEADをデプロイする
 commit_id=$(git rev-parse HEAD)
 
@@ -28,3 +30,5 @@ if [ "$status" = 'Succeeded' ]; then
 else
     echo "失敗しました: status = [$status]"
 fi
+
+echo "END: $(date)"
